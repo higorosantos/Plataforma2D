@@ -10,7 +10,6 @@ public class CameraMotion : MonoBehaviour
     public Vector3 aditionalPos;
 
     [Range(-50f, 50f)]public float cameraDistance;
-    [Range(-1, 1)]public sbyte switcherDistance;
 
     public bool smoothLerp = true; 
     [Range(0, 1f)]public float lerpTime;
@@ -36,7 +35,7 @@ public class CameraMotion : MonoBehaviour
             ApllyRayPoint(cameraRay.GetPoint(-cameraDistance) + aditionalPos);
 
             Debug.DrawLine(player.position, transform.position);
-            Debug.DrawLine(player.position, cameraRay.GetPoint(cameraDistance) * switcherDistance);
+            Debug.DrawLine(player.position, cameraRay.GetPoint(-cameraDistance));
         }
     }
     
